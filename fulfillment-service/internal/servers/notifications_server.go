@@ -368,6 +368,7 @@ func (s *NotificationsServer) Update(ctx context.Context,
 	privateRequest := &privatev1.NotificationsUpdateRequest{}
 	privateRequest.SetObject(privateNotification)
 	privateRequest.SetUpdateMask(updateMask)
+	privateRequest.SetLock(request.GetLock())
 	privateResponse, err := s.delegate.Update(ctx, privateRequest)
 	if err != nil {
 		return nil, err

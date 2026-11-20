@@ -84,7 +84,7 @@ var _ = Describe("Notifications tenant isolation", Label("notifications"), func(
 						Id:     fmt.Sprintf("evt-%s", uuid.New()[:8]),
 						Source: "osac/fulfillment-service",
 					}.Build(),
-					RecipientId: "user-a",
+					RecipientId: fmt.Sprintf("%s-osac-break-glass", nameA),
 					Title:       "Tenant A inbox",
 				}.Build(),
 			}.Build(),
